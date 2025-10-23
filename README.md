@@ -1,9 +1,9 @@
 # 🧩 Terraform Provider - ValidateFX
 
 [![Go Version](https://img.shields.io/github/go-mod/go-version/The-DevOps-Daily/terraform-provider-validatefx?style=flat-square)](https://go.dev/)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/The-DevOps-Daily/terraform-provider-validatefx/test.yml?branch=main&style=flat-square)](https://github.com/The-DevOps-Daily/terraform-provider-validatefx/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/The-DevOps-Daily/terraform-provider-validatefx/ci.yml?branch=main&style=flat-square)](https://github.com/The-DevOps-Daily/terraform-provider-validatefx/actions)
 [![License](https://img.shields.io/github/license/The-DevOps-Daily/terraform-provider-validatefx?style=flat-square)](https://github.com/The-DevOps-Daily/terraform-provider-validatefx/blob/main/LICENSE)
-[![Terraform Registry](https://img.shields.io/badge/terraform-registry-623CE4?style=flat-square&logo=terraform)](https://registry.terraform.io/providers/thedevopsdaily/validatefx/latest)
+[![Terraform Registry](https://img.shields.io/badge/terraform-registry-623CE4?style=flat-square&logo=terraform)](https://registry.terraform.io/providers/The-DevOps-Daily/validatefx/latest)
 
 Reusable validation functions for Terraform, built with the latest [Terraform Plugin Framework](https://github.com/hashicorp/terraform-plugin-framework).
 
@@ -17,7 +17,7 @@ ValidateFX lets you write cleaner, more expressive validations using functions l
 terraform {
   required_providers {
     validatefx = {
-      source  = "thedevopsdaily/validatefx"
+      source  = "The-DevOps-Daily/validatefx"
       version = "0.1.0"
     }
   }
@@ -65,12 +65,13 @@ Example usage in `examples/basic/main.tf`.
 
 | Function | Description |
 | -------------------------- | ------------------------------------------------ |
-| `assert(bool, string)` | Validates a condition with a custom error message |
-| `email(string)` | Validates email format (RFC 5322) |
-| `uuid(string)` | Validates UUID (RFC 4122, versions 1-5) |
-| `base64(string)` | Validates Base64 encoding |
-| `credit_card(string)` | Validates credit card number (Luhn algorithm) |
-| `domain(string)` | Validates domain name (RFC 1123/952) |
+| `assert` | Assert a condition with a custom error message. |
+| `base64` | Validate that a string is Base64 encoded. |
+| `credit_card` | Validate that a string is a credit card number using the Luhn algorithm. |
+| `domain` | Validate that a string is a compliant domain name. |
+| `email` | Validate that a string is an RFC 5322 compliant email address. |
+| `uuid` | Validate that a string is an RFC 4122 UUID (versions 1-5). |
+
 
 ---
 
